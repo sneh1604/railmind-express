@@ -1,0 +1,91 @@
+/* src/styles/animations.css */
+
+/* --- Keyframe Animations --- */
+
+/* For the loading spinner */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* For the modal entrance */
+  @keyframes slide-down {
+    from {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* For the question display cursor */
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  
+  /* A fun shake animation for incorrect answers */
+  @keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+  }
+  
+  /* A celebratory 'tada' animation for correct answers or new badges */
+  @keyframes tada {
+    from { transform: scale3d(1, 1, 1); }
+    10%, 20% { transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg); }
+    30%, 50%, 70%, 90% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg); }
+    40%, 60%, 80% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg); }
+    to { transform: scale3d(1, 1, 1); }
+  }
+  
+  
+  /* --- Animation Utility Classes --- */
+  /* You can add these classes to elements to trigger animations */
+  
+  .animate-shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  }
+  
+  .animate-tada {
+    animation: tada 1s ease-in-out;
+  }
+
+
+  /* In src/styles/animations.css */
+
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 20px;
+  background: var(--bg);
+  top: -50px; /* Start above the screen */
+  left: 50%; /* Start in the center */
+  opacity: 0;
+  animation: drop var(--d) linear forwards;
+}
+
+@keyframes drop {
+  0% {
+    transform: translate(0, 0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(var(--x) - 50vw), calc(var(--y) + 50vh)) rotate(var(--r));
+    opacity: 0;
+  }
+}

@@ -1,0 +1,42 @@
+/* src/styles/globals.css */
+
+/* Import a fun, rounded font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700&display=swap');
+
+/* --- Basic CSS Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Global Styles --- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Baloo 2', cursive; /* The primary cartoonish font for the game */
+  line-height: 1.6;
+  background-color: #f4f7f6; /* A very light, clean background */
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: #4A90E2;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
