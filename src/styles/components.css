@@ -539,18 +539,126 @@
 }
 
 
-.home-container {
+/* In src/styles/components.css - REPLACE the old home page styles with this */
+
+.home-container-creative {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem 4rem;
+  min-height: 75vh;
+}
+
+/* --- The Main Welcome Section --- */
+.hero-content {
+  text-align: center;
+}
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #34495e;
+  line-height: 1.2;
+}
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #555;
+  margin: 1.5rem 0;
+}
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.auth-link {
+  font-weight: 600;
+  color: #555;
+}
+
+/* --- The Animated Storyboard Panel --- */
+.storyboard-panel {
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+  border-radius: 24px;
+  padding: 2rem;
+  height: 450px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding: 4rem 2rem;
-  min-height: 70vh;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* To keep animations contained */
 }
-.hero-content { max-width: 50%; }
-.hero-title { font-size: 3.5rem; font-weight: 700; color: #34495e; line-height: 1.2; }
-.hero-subtitle { font-size: 1.25rem; color: #555; margin: 1.5rem 0; }
-.home-actions { display: flex; align-items: center; gap: 1.5rem; }
-.auth-link { font-weight: 600; color: #555; }
+
+.story-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #004d40;
+}
+.scene-icon {
+  font-size: 4rem;
+  color: #00796b;
+  margin-bottom: 1rem;
+}
+.scene-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.scene-description {
+  font-size: 1.1rem;
+  max-width: 300px;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Puzzle Scene Specific Styles --- */
+.puzzle-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.puzzle-card p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.puzzle-options {
+  display: flex;
+  gap: 1rem;
+}
+.puzzle-options span {
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+}
+.puzzle-options span.correct {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+/* --- Reward Scene Specific Styles --- */
+.reward-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, #ffeb3b 0%, #fbc02d 100%);
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(251, 192, 45, 0.5);
+}
+.reward-icon {
+  font-size: 4rem;
+}
+.reward-text {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #3e2723;
+  margin-top: -10px;
+}
 
 
 .auth-error {
@@ -782,4 +890,2266 @@
 .creative-login-link:hover {
   background: #27ae60;
   color: #fff;
+}
+
+/* --- Responsive Home Page Creative Layout --- */
+.home-container-creative {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem 4rem;
+  min-height: 75vh;
+}
+
+.storyboard-panel {
+  margin-right: 2rem;
+}
+
+.hero-content {
+  margin-left: 2rem;
+}
+
+@media (max-width: 900px) {
+  .home-container-creative {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  .storyboard-panel, .hero-content {
+    margin: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-container-creative {
+    padding: 1rem 0.5rem;
+    gap: 1.2rem;
+  }
+  .storyboard-panel {
+    padding: 1rem;
+    height: 300px;
+  }
+  .hero-title {
+    font-size: 2.1rem;
+  }
+  .scene-title {
+    font-size: 1.2rem;
+  }
+  .scene-description {
+    font-size: 0.95rem;
+  }
+}
+
+/* Add spacing between Navbar and main content */
+.page-layout > .main-content {
+  margin-top: 1.5rem;
+}
+
+/* Ensure Navbar is visually distinct and spaced on mobile */
+@media (max-width: 600px) {
+  .creative-navbar {
+    padding: 0 0.5rem;
+  }
+  .navbar-container {
+    flex-direction: column;
+    height: auto;
+    gap: 0.7rem;
+    padding: 0.7rem 0;
+  }
+  .creative-user {
+    margin-top: 0.5rem;
+  }
+}
+
+/* ===== REVOLUTIONARY GAME UI STYLES ===== */
+
+/* Quantum Answer Interface - Enhanced */
+.quantum-answer-interface {
+  position: relative;
+  padding: 2rem;
+  background: radial-gradient(ellipse at center, rgba(10, 25, 47, 0.9), rgba(5, 15, 35, 0.95));
+  border-radius: 25px;
+  border: 2px solid rgba(74, 144, 226, 0.5);
+  overflow: visible;
+  min-height: auto;
+  width: 100%;
+  box-shadow: 
+    0 20px 60px rgba(74, 144, 226, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Holographic Question Display */
+.holographic-question-container {
+  position: relative;
+  background: linear-gradient(135deg, rgba(10, 25, 47, 0.9), rgba(5, 15, 35, 0.95));
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 8px 32px rgba(74, 144, 226, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.holographic-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #4A90E2, #00ff88, #ff0066, #4A90E2);
+  background-size: 400% 400%;
+  animation: holographicShift 4s ease-in-out infinite;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.corner-accent {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 3px solid #4A90E2;
+  z-index: 1;
+}
+
+.corner-accent.top-left {
+  top: 10px;
+  left: 10px;
+  border-right: none;
+  border-bottom: none;
+  border-top-left-radius: 10px;
+}
+
+.corner-accent.top-right {
+  top: 10px;
+  right: 10px;
+  border-left: none;
+  border-bottom: none;
+  border-top-right-radius: 10px;
+}
+
+.corner-accent.bottom-left {
+  bottom: 10px;
+  left: 10px;
+  border-right: none;
+  border-top: none;
+  border-bottom-left-radius: 10px;
+}
+
+.corner-accent.bottom-right {
+  bottom: 10px;
+  right: 10px;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 10px;
+}
+
+.neural-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.neural-topic-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  z-index: 2;
+  position: relative;
+}
+
+.topic-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, rgba(74, 144, 226, 0.3), transparent);
+  border-radius: 50%;
+  border: 2px solid #4A90E2;
+}
+
+.topic-icon {
+  font-size: 1.5rem;
+  color: #4A90E2;
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+.topic-info {
+  flex-grow: 1;
+}
+
+.topic-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #f5a623;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.topic-name {
+  display: block;
+  font-size: 1.2rem;
+  color: #cdd6f4;
+  font-weight: bold;
+  margin-top: 0.3rem;
+}
+
+.difficulty-indicator {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.difficulty-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(74, 144, 226, 0.3);
+  border: 1px solid #4A90E2;
+}
+
+.difficulty-dot.active {
+  background: #4A90E2;
+  box-shadow: 0 0 10px #4A90E2;
+}
+
+.question-content {
+  position: relative;
+  z-index: 2;
+}
+
+.holographic-text-container {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid rgba(74, 144, 226, 0.3);
+}
+
+.holographic-question-text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #e0e6f0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  min-height: 60px;
+  text-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.holographic-question-text.typing .neural-cursor {
+  opacity: 1;
+  animation: neuralBlink 1s step-end infinite;
+}
+
+.holographic-question-text.complete {
+  text-shadow: 0 0 15px rgba(74, 144, 226, 0.8);
+}
+
+.neural-cursor {
+  color: #4A90E2;
+  font-weight: bold;
+  text-shadow: 0 0 10px #4A90E2;
+}
+
+.floating-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #4A90E2;
+  border-radius: 50%;
+  animation: floatParticle 4s ease-in-out infinite;
+}
+
+.particle-1 { top: 10%; left: 10%; animation-delay: 0s; }
+.particle-2 { top: 20%; right: 15%; animation-delay: 0.5s; }
+.particle-3 { bottom: 30%; left: 20%; animation-delay: 1s; }
+.particle-4 { bottom: 10%; right: 10%; animation-delay: 1.5s; }
+.particle-5 { top: 50%; left: 5%; animation-delay: 2s; }
+.particle-6 { top: 30%; right: 5%; animation-delay: 2.5s; }
+.particle-7 { bottom: 50%; left: 15%; animation-delay: 3s; }
+.particle-8 { bottom: 20%; right: 25%; animation-delay: 3.5s; }
+
+.data-stream {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.stream-line {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(to bottom, transparent, #4A90E2, transparent);
+  animation: dataFlow 2s linear infinite;
+}
+
+.stream-line.delayed {
+  animation-delay: 1s;
+}
+
+.holographic-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background: rgba(10, 25, 47, 0.9);
+  border-radius: 20px;
+  border: 2px solid #4A90E2;
+}
+
+.loading-orb {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #4A90E2, #001a33);
+  animation: orbPulse 2s ease-in-out infinite;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 30px #4A90E2;
+}
+
+/* Quantum Answer Interface */
+.quantum-answer-interface {
+  position: relative;
+  padding: 2rem;
+  background: radial-gradient(ellipse at center, rgba(10, 25, 47, 0.9), rgba(5, 15, 35, 0.95));
+  border-radius: 25px;
+  border: 2px solid rgba(74, 144, 226, 0.5);
+  overflow: visible; /* Changed from hidden to visible to ensure all options show */
+  min-height: auto; /* Ensure container can expand */
+  width: 100%;
+}
+
+.energy-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.core-ring {
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgba(74, 144, 226, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: coreRotate 10s linear infinite;
+}
+
+.core-icon {
+  font-size: 2rem;
+  color: #4A90E2;
+  text-shadow: 0 0 20px #4A90E2;
+}
+
+.quantum-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  z-index: 2;
+  position: relative;
+  margin-top: 2rem;
+  width: 100%;
+  min-height: auto;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.quantum-option {
+  position: relative;
+  background: linear-gradient(135deg, rgba(30, 42, 71, 0.9), rgba(20, 32, 61, 0.95));
+  border: 2px solid rgba(74, 144, 226, 0.5);
+  border-radius: 15px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 80px;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1;
+  max-width: 100%;
+}
+
+.quantum-option:hover:not(.disabled) {
+  border-color: #4A90E2;
+  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+.quantum-option.selected {
+  border-color: #00ff88;
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(74, 144, 226, 0.3));
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+.quantum-option.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.option-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  z-index: 2;
+  position: relative;
+  min-height: 50px;
+  width: 100%;
+  flex: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.option-letter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  background: rgba(74, 144, 226, 0.3);
+  border: 2px solid #4A90E2;
+  border-radius: 50%;
+  font-weight: bold;
+  color: #4A90E2;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.option-text {
+  flex: 1;
+  color: #e0e6f0;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  width: 100%;
+  padding-right: 0.5rem;
+  text-align: left;
+}
+
+.submission-status {
+  text-align: center;
+  margin-top: 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.quantum-transmission {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #4A90E2;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.transmission-icon {
+  animation: simplePulse 1s ease-in-out infinite;
+}
+
+@keyframes simplePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Neural Text Input Interface */
+.neural-input-interface {
+  position: relative;
+  padding: 2rem;
+  background: radial-gradient(ellipse at center, rgba(10, 25, 47, 0.9), rgba(5, 15, 35, 0.95));
+  border-radius: 25px;
+  border: 2px solid rgba(74, 144, 226, 0.5);
+  overflow: hidden;
+}
+
+.neural-field-container {
+  position: relative;
+  z-index: 2;
+}
+
+.field-energy-rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.energy-ring {
+  position: absolute;
+  border: 2px solid rgba(74, 144, 226, 0.2);
+  border-radius: 50%;
+  animation: energyRingRotate 8s linear infinite;
+}
+
+.ring-1 {
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+}
+
+.ring-2 {
+  width: 100px;
+  height: 100px;
+  margin: -50px 0 0 -50px;
+}
+
+.ring-3 {
+  width: 200px;
+  height: 200px;
+  margin: -100px 0 0 -100px;
+}
+
+.neural-form {
+  display: flex;
+  gap: 1.5rem;
+  align-items: end;
+  z-index: 2;
+  position: relative;
+}
+
+.input-pod {
+  flex-grow: 1;
+  position: relative;
+  background: rgba(30, 42, 71, 0.8);
+  border-radius: 15px;
+  border: 2px solid rgba(74, 144, 226, 0.4);
+  overflow: hidden;
+}
+
+.input-scanner {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #4A90E2, transparent);
+  animation: inputScan 3s ease-in-out infinite;
+}
+
+.neural-text-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #e0e6f0;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  outline: none;
+}
+
+.neural-text-input::placeholder {
+  color: rgba(224, 230, 240, 0.5);
+}
+
+.input-energy-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(74, 144, 226, 0.2);
+}
+
+.energy-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4A90E2, #00ff88);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px #4A90E2;
+}
+
+.neural-submit-btn {
+  position: relative;
+  background: linear-gradient(135deg, #4A90E2, #357ABD);
+  border: none;
+  border-radius: 15px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.neural-submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
+  border-color: #4A90E2;
+}
+
+.neural-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.neural-submit-btn.transmitting {
+  animation: buttonPulse 1s ease-in-out infinite;
+}
+
+.btn-core {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 2;
+  position: relative;
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+.btn-icon.spinning {
+  animation: iconSpin 1s linear infinite;
+}
+
+.btn-plasma-trail {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: plasmaTrail 2s ease-in-out infinite;
+}
+
+.ambient-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.light-beam {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #4A90E2, transparent);
+  opacity: 0.3;
+  animation: lightBeamMove 4s ease-in-out infinite;
+}
+
+.beam-1 { left: 20%; animation-delay: 0s; }
+.beam-2 { left: 50%; animation-delay: 1.5s; }
+.beam-3 { right: 20%; animation-delay: 3s; }
+
+/* Quantum Puzzle Scene */
+.quantum-puzzle-scene {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: radial-gradient(ellipse at center, #000015, #000000);
+  border-radius: 25px;
+  border: 2px solid rgba(74, 144, 226, 0.5);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.quantum-overlay {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  background: rgba(10, 25, 47, 0.8);
+  border-radius: 15px;
+  padding: 1rem;
+  border: 1px solid rgba(74, 144, 226, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.quantum-status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status-indicator {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.status-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: #4A90E2;
+  border-radius: 50%;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+.status-indicator.correct .status-core {
+  background: #00ff88;
+  box-shadow: 0 0 20px #00ff88;
+}
+
+.status-indicator.incorrect .status-core {
+  background: #ff0066;
+  box-shadow: 0 0 20px #ff0066;
+}
+
+.status-rings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.status-rings .ring {
+  position: absolute;
+  border: 2px solid rgba(74, 144, 226, 0.3);
+  border-radius: 50%;
+  animation: statusRingExpand 2s ease-out infinite;
+}
+
+.status-rings .ring:nth-child(1) {
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  animation-delay: 0s;
+}
+
+.status-rings .ring:nth-child(2) {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation-delay: 0.7s;
+}
+
+.status-rings .ring:nth-child(3) {
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  animation-delay: 1.4s;
+}
+
+.status-text {
+  color: #cdd6f4;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.quantum-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.quantum-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #4A90E2;
+  border-radius: 50%;
+  animation: quantumDrift 5s ease-in-out infinite;
+}
+
+.energy-field {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.field-wave {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #4A90E2, transparent);
+  animation: fieldWaveMove 3s ease-in-out infinite;
+}
+
+.wave-1 { top: 30%; animation-delay: 0s; }
+.wave-2 { top: 50%; animation-delay: 1s; }
+.wave-3 { top: 70%; animation-delay: 2s; }
+
+/* Quantum Railway System */
+.quantum-railway-system {
+  position: relative;
+  background: linear-gradient(135deg, rgba(10, 25, 47, 0.9), rgba(5, 15, 35, 0.95));
+  border-radius: 25px;
+  border: 2px solid rgba(74, 144, 226, 0.5);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.dimensional-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.space-warp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border: 2px solid rgba(74, 144, 226, 0.2);
+  border-radius: 50%;
+  animation: spaceWarp 10s linear infinite;
+}
+
+.quantum-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.grid-line {
+  position: absolute;
+  background: rgba(74, 144, 226, 0.1);
+  animation: gridPulse 4s ease-in-out infinite;
+}
+
+.grid-line:nth-child(odd) {
+  width: 1px;
+  height: 100%;
+  left: calc(var(--index) * 5%);
+}
+
+.grid-line:nth-child(even) {
+  width: 100%;
+  height: 1px;
+  top: calc(var(--index) * 5%);
+}
+
+.city-terminal {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 2;
+}
+
+.start-terminal {
+  left: 0;
+}
+
+.end-terminal {
+  right: 0;
+  flex-direction: row-reverse;
+}
+
+.terminal-core {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(74, 144, 226, 0.3), transparent);
+  border: 3px solid #4A90E2;
+  border-radius: 50%;
+}
+
+.core-energy {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #4A90E2, transparent, #00ff88, transparent);
+  background-size: 400% 400%;
+  animation: coreEnergyFlow 3s ease-in-out infinite;
+  z-index: -1;
+}
+
+.terminal-icon {
+  font-size: 1.8rem;
+  color: #4A90E2;
+  z-index: 2;
+  animation: terminalIconPulse 2s ease-in-out infinite;
+}
+
+.terminal-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.terminal-label {
+  font-size: 0.8rem;
+  color: #f5a623;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.city-name {
+  font-size: 1.2rem;
+  color: #cdd6f4;
+  font-weight: bold;
+}
+
+.energy-streams {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.energy-stream {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(to bottom, transparent, #4A90E2, transparent);
+  animation: energyStreamFlow 2s ease-in-out infinite;
+}
+
+.stream-1 { top: -20px; left: 20%; animation-delay: 0s; }
+.stream-2 { top: -20px; left: 50%; animation-delay: 0.7s; }
+.stream-3 { top: -20px; right: 20%; animation-delay: 1.4s; }
+
+.quantum-track-system {
+  position: relative;
+  margin: 2rem 0;
+  height: 80px;
+  z-index: 2;
+}
+
+.main-track {
+  position: relative;
+  height: 6px;
+  background: rgba(74, 144, 226, 0.2);
+  border-radius: 3px;
+  margin: 2rem 5rem;
+  overflow: hidden;
+}
+
+.track-energy-flow {
+  height: 100%;
+  background: linear-gradient(90deg, #4A90E2, #00ff88);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+  box-shadow: 0 0 15px #4A90E2;
+  position: relative;
+}
+
+.energy-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.energy-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: energyParticleFlow 2s linear infinite;
+}
+
+.dimensional-rift {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  z-index: 3;
+}
+
+.rift-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: #00ff88;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #00ff88;
+}
+
+.rift-waves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.rift-wave {
+  position: absolute;
+  border: 2px solid #00ff88;
+  border-radius: 50%;
+  animation: riftWaveExpand 1s ease-out;
+}
+
+.quantum-train {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.train-core {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 40px;
+  background: linear-gradient(135deg, #4A90E2, #357ABD);
+  border-radius: 10px;
+  border: 2px solid #00ff88;
+  box-shadow: 0 0 20px rgba(74, 144, 226, 0.6);
+}
+
+.train-icon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.train-energy-field {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid rgba(0, 255, 136, 0.5);
+  border-radius: 15px;
+  animation: trainEnergyPulse 1.5s ease-in-out infinite;
+}
+
+.train-trail {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 6px;
+}
+
+.trail-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #4A90E2;
+  border-radius: 50%;
+  animation: trailParticleMove 1s ease-out infinite;
+}
+
+.velocity-indicator {
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  color: #00ff88;
+  font-size: 0.8rem;
+  animation: velocityBlink 0.5s ease-in-out infinite;
+}
+
+.quantum-waypoint {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.waypoint-core {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(30, 42, 71, 0.9);
+  border: 2px solid rgba(74, 144, 226, 0.5);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.quantum-waypoint.completed .waypoint-core {
+  background: rgba(0, 255, 136, 0.2);
+  border-color: #00ff88;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+}
+
+.quantum-waypoint.current .waypoint-core {
+  background: rgba(74, 144, 226, 0.3);
+  border-color: #4A90E2;
+  box-shadow: 0 0 20px rgba(74, 144, 226, 0.7);
+}
+
+.core-ring {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #4A90E2, transparent);
+  animation: waypointRingRotate 4s linear infinite;
+}
+
+.core-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #cdd6f4;
+  z-index: 2;
+}
+
+.completion-check {
+  color: #00ff88;
+  font-size: 1rem;
+}
+
+.waypoint-number {
+  color: #4A90E2;
+}
+
+.current-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.indicator-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(74, 144, 226, 0.3);
+  border-radius: 50%;
+  animation: indicatorPulse 2s ease-in-out infinite;
+}
+
+.indicator-rings {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.indicator-ring {
+  position: absolute;
+  border: 2px solid rgba(74, 144, 226, 0.4);
+  border-radius: 50%;
+  animation: indicatorRingExpand 3s ease-out infinite;
+}
+
+.completion-aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.aura-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgba(0, 255, 136, 0.3);
+  border-radius: 50%;
+  animation: auraRingPulse 3s ease-in-out infinite;
+}
+
+.energy-wisps {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.energy-wisp {
+  position: absolute;
+  width: 3px;
+  height: 10px;
+  background: linear-gradient(to bottom, #00ff88, transparent);
+  animation: energyWispFloat 4s ease-in-out infinite;
+}
+
+.progress-stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1rem;
+  z-index: 2;
+  position: relative;
+}
+
+.stat-container {
+  flex: 1;
+  background: rgba(30, 42, 71, 0.6);
+  border: 1px solid rgba(74, 144, 226, 0.3);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: #f5a623;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  color: #cdd6f4;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.stat-bar {
+  height: 4px;
+  background: rgba(74, 144, 226, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4A90E2, #00ff88);
+  transition: width 0.5s ease;
+}
+
+.energy-meter {
+  height: 6px;
+  background: rgba(74, 144, 226, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4A90E2, #00ff88);
+  transition: width 0.5s ease;
+  box-shadow: 0 0 10px #4A90E2;
+}
+
+.ambient-quantum-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-quantum-dot {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #4A90E2;
+  border-radius: 50%;
+  animation: quantumDotFloat 5s ease-in-out infinite;
+}
+
+/* ===== KEYFRAME ANIMATIONS ===== */
+
+@keyframes holographicShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes neuralBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes floatParticle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.5; }
+  50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+}
+
+@keyframes dataFlow {
+  0% { top: -20px; opacity: 0; }
+  50% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes orbPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+@keyframes coreRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes optionFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes quantumFloat {
+  0%, 100% { transform: translate(0px, 0px) rotate(0deg); opacity: 0.3; }
+  25% { transform: translate(10px, -10px) rotate(90deg); opacity: 0.7; }
+  50% { transform: translate(-5px, -20px) rotate(180deg); opacity: 1; }
+  75% { transform: translate(-15px, -5px) rotate(270deg); opacity: 0.7; }
+}
+
+@keyframes transmissionPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+@keyframes energyRingRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes inputScan {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: -100%; }
+}
+
+@keyframes buttonPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(74, 144, 226, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(74, 144, 226, 0.8); }
+}
+
+@keyframes iconSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes plasmaTrail {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes lightBeamMove {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes statusPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+@keyframes statusRingExpand {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes quantumDrift {
+  0%, 100% { transform: translate(0px, 0px); opacity: 0.3; }
+  25% { transform: translate(50px, -30px); opacity: 0.7; }
+  50% { transform: translate(-30px, -60px); opacity: 1; }
+  75% { transform: translate(-70px, -20px); opacity: 0.7; }
+}
+
+@keyframes fieldWaveMove {
+  0% { left: -100%; opacity: 0; }
+  50% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+@keyframes spaceWarp {
+  0% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) scale(1.1); }
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes coreEnergyFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes terminalIconPulse {
+  0%, 100% { transform: scale(1); text-shadow: 0 0 10px #4A90E2; }
+  50% { transform: scale(1.1); text-shadow: 0 0 20px #4A90E2; }
+}
+
+@keyframes energyStreamFlow {
+  0% { top: -20px; opacity: 0; }
+  50% { opacity: 1; }
+  100% { top: 100px; opacity: 0; }
+}
+
+@keyframes energyParticleFlow {
+  0% { left: 0%; opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+@keyframes riftWaveExpand {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+@keyframes trainEnergyPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes trailParticleMove {
+  0% { left: 0%; opacity: 1; }
+  100% { left: -100px; opacity: 0; }
+}
+
+@keyframes velocityBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}
+
+@keyframes waypointRingRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes indicatorPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+  50% { transform: translate(-50%, -50%) scale(1.5); opacity: 0.7; }
+}
+
+@keyframes indicatorRingExpand {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+@keyframes auraRingPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  50% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.8; }
+}
+
+@keyframes energyWispFloat {
+  0%, 100% { transform: rotate(0deg) translateX(30px) rotate(0deg); opacity: 0; }
+  25% { opacity: 0.7; }
+  50% { transform: rotate(180deg) translateX(30px) rotate(-180deg); opacity: 1; }
+  75% { opacity: 0.7; }
+}
+
+@keyframes quantumDotFloat {
+  0%, 100% { transform: translateY(0px); opacity: 0.3; }
+  50% { transform: translateY(-30px); opacity: 0.8; }
+}
+
+/* Responsive improvements for quantum interface */
+@media (min-width: 769px) {
+  .quantum-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .quantum-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .quantum-option {
+    padding: 1rem;
+    min-height: 70px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .option-content {
+    gap: 0.8rem;
+    min-height: 40px;
+    width: 100%;
+  }
+  
+  .option-letter {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    font-size: 1rem;
+  }
+  
+  .option-text {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+  
+  .neural-form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .neural-submit-btn {
+    align-self: center;
+    width: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quantum-answer-interface,
+  .neural-input-interface {
+    padding: 1.5rem;
+  }
+  
+  .quantum-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .quantum-option {
+    padding: 0.8rem;
+    min-height: 60px;
+    max-width: 100%;
+  }
+  
+  .option-text {
+    font-size: 0.95rem;
+  }
+  
+  .option-content {
+    min-height: 35px;
+  }
+  
+  .option-letter {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== REVOLUTIONARY NEW ANIMATIONS ===== */
+
+/* Quantum DNA Helix Animation */
+@keyframes quantumDNARotate {
+  0% { 
+    transform: rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+  25% { 
+    transform: rotate(90deg) scale(1.1);
+    opacity: 0.5;
+  }
+  50% { 
+    transform: rotate(180deg) scale(1);
+    opacity: 0.7;
+  }
+  75% { 
+    transform: rotate(270deg) scale(1.1);
+    opacity: 0.5;
+  }
+  100% { 
+    transform: rotate(360deg) scale(1);
+    opacity: 0.3;
+  }
+}
+
+/* Matrix Energy Pulse */
+@keyframes matrixPulse {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    opacity: 0.3;
+  }
+  25% { 
+    transform: scale(1.2) rotate(90deg);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: scale(1.5) rotate(180deg);
+    opacity: 0.8;
+  }
+  75% { 
+    transform: scale(1.2) rotate(270deg);
+    opacity: 0.6;
+  }
+}
+
+/* Quantum Field Distortion */
+@keyframes quantumFieldDistort {
+  0% { 
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    filter: hue-rotate(0deg);
+  }
+  25% { 
+    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+    filter: hue-rotate(90deg);
+  }
+  50% { 
+    clip-path: polygon(0% 10%, 100% 0%, 90% 100%, 0% 90%);
+    filter: hue-rotate(180deg);
+  }
+  75% { 
+    clip-path: polygon(0% 0%, 90% 10%, 100% 90%, 10% 100%);
+    filter: hue-rotate(270deg);
+  }
+  100% { 
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Neural Synapse Fire */
+@keyframes neuralSynapseFire {
+  0% { 
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    background: rgba(74, 144, 226, 0.1);
+  }
+  25% { 
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
+    background: rgba(0, 255, 136, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 25px rgba(255, 0, 102, 0.9);
+    background: rgba(255, 0, 102, 0.3);
+  }
+  75% { 
+    box-shadow: 0 0 15px rgba(255, 200, 0, 0.7);
+    background: rgba(255, 200, 0, 0.2);
+  }
+  100% { 
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    background: rgba(74, 144, 226, 0.1);
+  }
+}
+
+/* Interdimensional Warp */
+@keyframes interdimensionalWarp {
+  0%, 100% { 
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+    border-radius: 15px;
+  }
+  25% { 
+    transform: perspective(1000px) rotateX(10deg) rotateY(5deg);
+    border-radius: 25px 15px 25px 15px;
+  }
+  50% { 
+    transform: perspective(1000px) rotateX(0deg) rotateY(10deg);
+    border-radius: 30px 10px 30px 10px;
+  }
+  75% { 
+    transform: perspective(1000px) rotateX(-10deg) rotateY(5deg);
+    border-radius: 15px 25px 15px 25px;
+  }
+}
+
+/* Option Quantum Float Enhanced */
+@keyframes optionFloat {
+  0%, 100% { 
+    transform: translateY(0px) scale(1);
+    filter: brightness(1);
+  }
+  33% { 
+    transform: translateY(-5px) scale(1.02);
+    filter: brightness(1.1);
+  }
+  66% { 
+    transform: translateY(3px) scale(0.98);
+    filter: brightness(0.9);
+  }
+}
+
+/* Enhanced Option Hover */
+.quantum-option:hover:not(.disabled) {
+  transform: translateY(-10px) scale(1.05);
+  border-color: #4A90E2;
+  box-shadow: 
+    0 15px 35px rgba(74, 144, 226, 0.4),
+    0 0 20px rgba(74, 144, 226, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+  animation: 
+    neuralSynapseFire 2s ease-in-out infinite,
+    interdimensionalWarp 4s ease-in-out infinite;
+}
+
+/* Enhanced Energy Core with Matrix Effect */
+.energy-core::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(74, 144, 226, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(0, 255, 136, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 25% 75%, rgba(255, 0, 102, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 75% 25%, rgba(255, 200, 0, 0.2) 0%, transparent 50%);
+  animation: matrixPulse 3s ease-in-out infinite;
+  border-radius: 50%;
+}
+
+/* Quantum Grid Enhanced */
+.quantum-grid::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, 
+    rgba(74, 144, 226, 0.1) 0%, 
+    rgba(0, 255, 136, 0.1) 25%, 
+    rgba(255, 0, 102, 0.1) 50%, 
+    rgba(255, 200, 0, 0.1) 75%, 
+    rgba(74, 144, 226, 0.1) 100%);
+  animation: quantumFieldDistort 8s ease-in-out infinite;
+  border-radius: 20px;
+  z-index: -1;
+}
+
+/* Neural Text Input Enhanced */
+.neural-text-input:focus {
+  animation: neuralSynapseFire 1s ease-in-out infinite;
+}
+
+/* Submit Button Quantum Enhancement */
+.neural-submit-btn:hover:not(:disabled) {
+  animation: 
+    interdimensionalWarp 2s ease-in-out infinite,
+    neuralSynapseFire 1.5s ease-in-out infinite;
+}
+
+/* Question Text Holographic Enhancement */
+.holographic-question-text.complete {
+  text-shadow: 
+    0 0 15px rgba(74, 144, 226, 0.8),
+    0 0 30px rgba(0, 255, 136, 0.4),
+    0 0 45px rgba(255, 0, 102, 0.2);
+  animation: neuralSynapseFire 3s ease-in-out infinite;
+}
+
+/* Advanced Particle System */
+.quantum-particles .quantum-particle {
+  animation: quantumFloat 3s ease-in-out infinite, neuralSynapseFire 2s ease-in-out infinite;
+}
+
+/* Revolutionary Progress Bar Enhancement */
+.progress-segment.active {
+  animation: 
+    neuralSynapseFire 2s ease-in-out infinite,
+    interdimensionalWarp 4s ease-in-out infinite;
+}
+
+/* Game Header Quantum Field */
+.game-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    rgba(74, 144, 226, 0.05) 0%, 
+    rgba(0, 255, 136, 0.05) 50%, 
+    rgba(74, 144, 226, 0.05) 100%);
+  animation: quantumDNARotate 10s linear infinite;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+/* Neural Status Header */
+.quantum-status-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  z-index: 3;
+}
+
+.neural-activity-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(74, 144, 226, 0.1);
+  border: 1px solid rgba(74, 144, 226, 0.3);
+  border-radius: 25px;
+  padding: 0.8rem 1.5rem;
+  color: #4A90E2;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.activity-pulse {
+  width: 12px;
+  height: 12px;
+  background: #4A90E2;
+  border-radius: 50%;
+  animation: neuralPulse 1.5s ease-in-out infinite;
+  box-shadow: 0 0 10px #4A90E2;
+}
+
+.neural-connection {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    rgba(74, 144, 226, 0.5) 20%, 
+    rgba(0, 255, 136, 0.7) 50%, 
+    rgba(74, 144, 226, 0.5) 80%, 
+    transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.quantum-option:hover .neural-connection {
+  opacity: 1;
+  animation: neuralTransmission 2s ease-in-out infinite;
+}
+
+/* Neural Pulse Animation */
+@keyframes neuralPulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% { 
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+/* Neural Transmission Animation */
+@keyframes neuralTransmission {
+  0% { 
+    background: linear-gradient(to bottom, 
+      transparent 0%, 
+      rgba(74, 144, 226, 0.8) 10%, 
+      transparent 20%);
+  }
+  50% { 
+    background: linear-gradient(to bottom, 
+      transparent 40%, 
+      rgba(0, 255, 136, 1) 50%, 
+      transparent 60%);
+  }
+  100% { 
+    background: linear-gradient(to bottom, 
+      transparent 80%, 
+      rgba(74, 144, 226, 0.8) 90%, 
+      transparent 100%);
+  }
+}
+
+/* Enhanced Topic Icon */
+.topic-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, rgba(74, 144, 226, 0.3), transparent);
+  border-radius: 50%;
+  border: 2px solid #4A90E2;
+}
+
+.icon-energy-ring {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border: 1px solid rgba(0, 255, 136, 0.5);
+  border-radius: 50%;
+  animation: energyRingRotate 3s linear infinite;
+}
+
+.topic-data-stream {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+}
+
+.data-bit {
+  width: 4px;
+  height: 4px;
+  background: #4A90E2;
+  border-radius: 50%;
+  animation: dataBitFlow 2s ease-in-out infinite;
+}
+
+.data-bit:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.data-bit:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Data Bit Flow Animation */
+@keyframes dataBitFlow {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.5;
+    background: #4A90E2;
+  }
+  33% { 
+    transform: scale(1.5);
+    opacity: 1;
+    background: #00ff88;
+  }
+  66% { 
+    transform: scale(1.2);
+    opacity: 0.8;
+    background: #ff0066;
+  }
+}
+
+/* Enhanced Difficulty Dots */
+.difficulty-dot.active {
+  background: #4A90E2;
+  box-shadow: 
+    0 0 10px #4A90E2,
+    inset 0 0 5px rgba(255, 255, 255, 0.3);
+  animation: difficultyPulse 2s ease-in-out infinite;
+}
+
+@keyframes difficultyPulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 0 10px #4A90E2;
+  }
+  50% { 
+    transform: scale(1.3);
+    box-shadow: 0 0 20px #4A90E2, 0 0 30px rgba(74, 144, 226, 0.5);
+  }
+}
+
+/* ===== REVOLUTIONARY QUANTUM FIELD SYSTEM ===== */
+
+.quantum-field-generator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.field-wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  margin: -100px 0 0 -100px;
+  border: 1px solid;
+  border-radius: 50%;
+  animation: quantumFieldPulse 4s ease-in-out infinite;
+}
+
+.field-wave.primary {
+  border-color: rgba(74, 144, 226, 0.3);
+  animation-delay: 0s;
+}
+
+.field-wave.secondary {
+  border-color: rgba(0, 255, 136, 0.2);
+  animation-delay: 1.3s;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+}
+
+.field-wave.tertiary {
+  border-color: rgba(255, 0, 102, 0.2);
+  animation-delay: 2.6s;
+  width: 250px;
+  height: 250px;
+  margin: -125px 0 0 -125px;
+}
+
+@keyframes quantumFieldPulse {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% { 
+    transform: scale(1.5) rotate(180deg);
+    opacity: 0.8;
+  }
+}
+
+/* Quantum Energy Bar */
+.quantum-energy-bar {
+  width: 100px;
+  height: 4px;
+  background: rgba(74, 144, 226, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-left: 1rem;
+}
+
+.quantum-energy-bar .energy-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4A90E2, #00ff88, #ff0066);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.8);
+}
+
+/* Quantum Aura */
+.quantum-aura {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(circle, 
+    rgba(74, 144, 226, 0.3) 0%, 
+    rgba(0, 255, 136, 0.2) 50%, 
+    transparent 100%);
+  border-radius: 15px;
+  pointer-events: none;
+  animation: quantumAuraPulse 3s ease-in-out infinite;
+}
+
+@keyframes quantumAuraPulse {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    opacity: 0.3;
+  }
+  50% { 
+    transform: scale(1.1) rotate(180deg);
+    opacity: 0.7;
+  }
+}
+
+/* Neural Sync State */
+.quantum-option.neural-sync {
+  border-color: #00ff88;
+  background: linear-gradient(135deg, 
+    rgba(0, 255, 136, 0.3), 
+    rgba(74, 144, 226, 0.4));
+  box-shadow: 
+    0 0 30px rgba(0, 255, 136, 0.6),
+    0 15px 35px rgba(74, 144, 226, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  animation: 
+    neuralSync 2s ease-in-out infinite,
+    interdimensionalWarp 4s ease-in-out infinite;
+}
+
+@keyframes neuralSync {
+  0%, 100% { 
+    transform: scale(1.05);
+    filter: brightness(1.2) saturate(1.5);
+  }
+  50% { 
+    transform: scale(1.08);
+    filter: brightness(1.5) saturate(2);
+  }
+}
+
+/* Dimensional Portal */
+.dimensional-portal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+}
+
+.portal-ring {
+  position: absolute;
+  border: 1px solid;
+  border-radius: 50%;
+  animation: portalRotate 6s linear infinite;
+}
+
+.portal-ring.ring-1 {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-color: rgba(74, 144, 226, 0.6);
+}
+
+.portal-ring.ring-2 {
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-color: rgba(0, 255, 136, 0.5);
+  animation-direction: reverse;
+}
+
+.portal-ring.ring-3 {
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-color: rgba(255, 0, 102, 0.4);
+}
+
+@keyframes portalRotate {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+/* Consciousness Meter */
+.consciousness-meter {
+  position: relative;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: rgba(10, 25, 47, 0.8);
+  border: 1px solid rgba(74, 144, 226, 0.3);
+  border-radius: 15px;
+  text-align: center;
+  z-index: 3;
+}
+
+.meter-label {
+  font-size: 0.8rem;
+  color: #4A90E2;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.meter-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(74, 144, 226, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.consciousness-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+  box-shadow: 0 0 15px rgba(74, 144, 226, 0.8);
+  animation: consciousnessFlow 3s ease-in-out infinite;
+}
+
+@keyframes consciousnessFlow {
+  0%, 100% { 
+    filter: brightness(1) saturate(1);
+  }
+  50% { 
+    filter: brightness(1.5) saturate(1.8);
+  }
+}
+
+.meter-readout {
+  font-size: 0.9rem;
+  color: #cdd6f4;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+}
+
+/* Transmission Wave */
+.transmission-wave {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(74, 144, 226, 0.6) 50%, 
+    transparent 100%);
+  animation: transmissionSweep 2s ease-in-out infinite;
+}
+
+@keyframes transmissionSweep {
+  0% { left: -100%; }
+  100% { left: 100%; }
 }
