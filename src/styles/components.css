@@ -1229,57 +1229,23 @@
   box-shadow: 0 0 30px #4A90E2;
 }
 
-/* Quantum Answer Interface */
+/* Quantum Answer Interface - Simplified */
 .quantum-answer-interface {
   position: relative;
   padding: 2rem;
   background: radial-gradient(ellipse at center, rgba(10, 25, 47, 0.9), rgba(5, 15, 35, 0.95));
   border-radius: 25px;
   border: 2px solid rgba(74, 144, 226, 0.5);
-  overflow: visible; /* Changed from hidden to visible to ensure all options show */
-  min-height: auto; /* Ensure container can expand */
   width: 100%;
-}
-
-.energy-core {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100px;
-  height: 100px;
-  z-index: 0;
-  opacity: 0.6;
-}
-
-.core-ring {
-  width: 100%;
-  height: 100%;
-  border: 3px solid rgba(74, 144, 226, 0.3);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: coreRotate 10s linear infinite;
-}
-
-.core-icon {
-  font-size: 2rem;
-  color: #4A90E2;
-  text-shadow: 0 0 20px #4A90E2;
+  min-height: auto;
 }
 
 .quantum-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  z-index: 2;
-  position: relative;
-  margin-top: 2rem;
   width: 100%;
-  min-height: auto;
-  max-width: none;
-  box-sizing: border-box;
+  margin-top: 1rem;
 }
 
 .quantum-option {
@@ -1292,16 +1258,15 @@
   transition: all 0.3s ease;
   min-height: 80px;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   width: 100%;
   box-sizing: border-box;
-  flex: 1;
-  max-width: 100%;
 }
 
 .quantum-option:hover:not(.disabled) {
   border-color: #4A90E2;
   box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+  transform: translateY(-2px);
 }
 
 .quantum-option.selected {
@@ -1317,15 +1282,54 @@
 
 .option-content {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
-  z-index: 2;
-  position: relative;
-  min-height: 50px;
   width: 100%;
+}
+
+.option-letter {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  background: #4A90E2;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.option-text {
   flex: 1;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #e0e6f0;
+  font-weight: 500;
+}
+
+.submission-status {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.quantum-transmission {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #4A90E2;
+  font-weight: bold;
+}
+
+.transmission-icon {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 .option-letter {
@@ -1390,14 +1394,13 @@
   50% { opacity: 0.5; }
 }
 
-/* Neural Text Input Interface */
+/* Neural Text Input Interface - Simplified */
 .neural-input-interface {
   position: relative;
   padding: 2rem;
   background: radial-gradient(ellipse at center, rgba(10, 25, 47, 0.9), rgba(5, 15, 35, 0.95));
   border-radius: 25px;
   border: 2px solid rgba(74, 144, 226, 0.5);
-  overflow: hidden;
 }
 
 .neural-field-container {
@@ -1405,45 +1408,10 @@
   z-index: 2;
 }
 
-.field-energy-rings {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-}
-
-.energy-ring {
-  position: absolute;
-  border: 2px solid rgba(74, 144, 226, 0.2);
-  border-radius: 50%;
-  animation: energyRingRotate 8s linear infinite;
-}
-
-.ring-1 {
-  width: 150px;
-  height: 150px;
-  margin: -75px 0 0 -75px;
-}
-
-.ring-2 {
-  width: 100px;
-  height: 100px;
-  margin: -50px 0 0 -50px;
-}
-
-.ring-3 {
-  width: 200px;
-  height: 200px;
-  margin: -100px 0 0 -100px;
-}
-
 .neural-form {
   display: flex;
   gap: 1.5rem;
   align-items: end;
-  z-index: 2;
-  position: relative;
 }
 
 .input-pod {
@@ -1455,14 +1423,51 @@
   overflow: hidden;
 }
 
-.input-scanner {
-  position: absolute;
-  top: 0;
-  left: -100%;
+.neural-text-input {
   width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #4A90E2, transparent);
-  animation: inputScan 3s ease-in-out infinite;
+  padding: 1rem 1.5rem;
+  background: transparent;
+  border: none;
+  color: #e0e6f0;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.neural-text-input::placeholder {
+  color: rgba(224, 230, 240, 0.6);
+}
+
+.neural-submit-btn {
+  background: linear-gradient(135deg, #4A90E2, #357ABD);
+  border: none;
+  border-radius: 15px;
+  padding: 1rem 2rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.neural-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+}
+
+.neural-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-core {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-icon {
+  font-size: 1rem;
 }
 
 .neural-text-input {

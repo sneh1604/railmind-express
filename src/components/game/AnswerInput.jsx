@@ -1,7 +1,7 @@
 // src/components/game/AnswerInput.jsx
 
 import React, { useState } from 'react';
-import { FaRocket, FaBolt, FaMagic } from 'react-icons/fa';
+import { FaRocket, FaBolt } from 'react-icons/fa';
 
 /**
  * Revolutionary morphing answer input with quantum-style interactions
@@ -63,14 +63,14 @@ const AnswerInput = ({ question, onSubmit, disabled }) => {
           ))}
         </div>
 
-        <div className="submission-status">
-          {isAnimating && (
+        {isAnimating && (
+          <div className="submission-status">
             <div className="quantum-transmission">
               <FaBolt className="transmission-icon" />
               <span>Processing Answer...</span>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     );
   }
@@ -100,8 +100,8 @@ const AnswerInput = ({ question, onSubmit, disabled }) => {
             <div className="btn-core">
               {isAnimating ? (
                 <>
-                  <FaMagic className="btn-icon spinning" />
-                  <span>SUBMITTING</span>
+                  <FaBolt className="btn-icon" />
+                  <span>SENDING</span>
                 </>
               ) : (
                 <>

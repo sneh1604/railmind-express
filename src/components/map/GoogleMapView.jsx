@@ -48,8 +48,9 @@ const mapOptions = {
  * The main Google Map view container.
  * @param {object} props - The component props.
  * @param {object} [props.route=exampleRoute] - The route data to display.
+ * @param {function} [props.onTrainJourneyComplete] - Callback when train reaches destination.
  */
-const GoogleMapView = ({ route = exampleRoute }) => {
+const GoogleMapView = ({ route = exampleRoute, onTrainJourneyComplete }) => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.REACT_APP_Maps_API_KEY,
@@ -68,7 +69,10 @@ const GoogleMapView = ({ route = exampleRoute }) => {
       >
         {/* Children components receive the map instance automatically */}
         <RouteOverlay path={route.path} stations={route.stations} />
-        <TrainAnimation path={route.path} />
+        <TrainAnimation 
+          path={route.path} 
+          onJourneyComplete={onTrainJourneyComplete}
+        />
       </GoogleMap>
     </div>
   );

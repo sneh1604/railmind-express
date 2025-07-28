@@ -9,8 +9,9 @@ import { FaTrain } from 'react-icons/fa';
  * @param {object} props - The component props.
  * @param {Array<object>} props.path - Array of {lat, lng} objects for the animation path.
  * @param {number} [props.duration=15000] - Total duration of the animation in milliseconds.
+ * @param {function} [props.onJourneyComplete] - Callback function when train reaches destination.
  */
-const TrainAnimation = ({ path, duration = 15000 }) => {
+const TrainAnimation = ({ path, duration = 15000, onJourneyComplete }) => {
   const [position, setPosition] = useState(path[0]);
   const [rotation, setRotation] = useState(0);
 
@@ -70,6 +71,11 @@ const TrainAnimation = ({ path, duration = 15000 }) => {
       
       if (progress < 1) {
         animationFrameId = requestAnimationFrame(animate);
+      } else {
+        // Journey complete - trigger callback
+        if (onJourneyComplete) {
+          onJourneyComplete();
+        }
       }
     };
 
@@ -78,7 +84,7 @@ const TrainAnimation = ({ path, duration = 15000 }) => {
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [path, duration]);
+  }, [path, duration, onJourneyComplete]);
 
   // SVG icon for the train for better rotation control
   const trainIcon = {
