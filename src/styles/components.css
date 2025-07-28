@@ -781,6 +781,19 @@
   text-align: center;
   cursor: help; /* Indicates to the user they can hover for more info */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.badge-card.earned {
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  border-color: #f39c12;
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3);
+}
+
+.badge-card.locked {
+  background: #f8f9fa;
+  border-color: #dee2e6;
+  color: #6c757d;
 }
 
 .badge-card .badge-icon {
@@ -793,6 +806,45 @@
   font-size: 0.9rem;
   font-weight: 600;
   color: #34495e;
+}
+
+.badge-card.locked .badge-name {
+  color: #6c757d;
+}
+
+.earned-indicator {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #27ae60;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.no-badges-message {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px dashed #dee2e6;
+}
+
+.no-badges-message p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.all-badges-preview h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 /* --- Creative Navbar Enhancements --- */
@@ -1944,6 +1996,918 @@
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+/* =============================================
+   REVOLUTIONARY PROFILE PAGE STYLES
+   ============================================= */
+
+.revolutionary-profile {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  padding: 2rem 0;
+}
+
+/* Profile Hero Section */
+.profile-hero-section {
+  position: relative;
+  text-align: center;
+  padding: 3rem 2rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+
+.profile-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0 2rem;
+}
+
+.hero-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.4), transparent);
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  animation: particle-drift 20s linear infinite;
+}
+
+@keyframes particle-drift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100px, -100px); }
+}
+
+.profile-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.profile-avatar-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #4ECDC4, #44A08D);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-ring {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: avatar-pulse 3s ease-in-out infinite;
+}
+
+@keyframes avatar-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% { 
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.profile-name {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 0.5rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.profile-title {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 2rem 0;
+  font-weight: 300;
+}
+
+.refresh-data-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.refresh-data-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.refresh-data-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spinning {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Enhanced Stats Grid */
+.profile-stats-grid-enhanced {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem auto;
+  padding: 0 2rem;
+}
+
+.stat-card-enhanced {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4ECDC4, #FFD700);
+}
+
+.stat-card-enhanced:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon-container {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+}
+
+.stat-card-enhanced .stat-icon {
+  font-size: 1.8rem;
+  color: #FFD700;
+}
+
+.stat-content h3 {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 0.5rem 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+/* Badge Showcase Section */
+.badges-showcase-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-icon {
+  font-size: 3rem;
+  color: #FFD700;
+  margin-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.progress-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.progress-text {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 600;
+}
+
+.progress-bar {
+  width: 300px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4ECDC4, #FFD700);
+  border-radius: 6px;
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4));
+  animation: progress-shine 2s ease-in-out infinite;
+}
+
+@keyframes progress-shine {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Debug Panel */
+.debug-panel {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid rgba(255, 215, 0, 0.5);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  font-family: 'Courier New', monospace;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.debug-panel h4 {
+  color: #FFD700;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.3rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.debug-content p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  word-break: break-all;
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.8rem;
+  border-radius: 8px;
+  border-left: 4px solid #4ECDC4;
+}
+
+.debug-content strong {
+  color: #4ECDC4;
+  font-weight: 700;
+}
+
+/* Enhanced Revolutionary Profile */
+.revolutionary-profile {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 30%, #f093fb 60%, #667eea 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  padding: 2rem 0;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Enhanced Profile Hero Section */
+.profile-hero-section {
+  position: relative;
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-bottom: 4rem;
+  overflow: hidden;
+}
+
+.profile-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  margin: 0 2rem;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+.hero-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(3px 3px at 25px 35px, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(2px 2px at 45px 75px, rgba(78, 205, 196, 0.3), transparent),
+    radial-gradient(1px 1px at 95px 45px, rgba(255, 215, 0, 0.5), transparent),
+    radial-gradient(2px 2px at 15px 85px, rgba(255, 255, 255, 0.3), transparent);
+  background-repeat: repeat;
+  background-size: 120px 120px;
+  animation: enhancedParticleDrift 25s linear infinite;
+}
+
+@keyframes enhancedParticleDrift {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-120px, -120px) rotate(360deg); }
+}
+
+.profile-avatar {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(135deg, #4ECDC4, #44A08D, #4ECDC4);
+  background-size: 200% 200%;
+  animation: avatarGradientShift 8s ease infinite;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  box-shadow: 
+    0 20px 60px rgba(78, 205, 196, 0.4),
+    inset 0 2px 4px rgba(255, 255, 255, 0.2);
+  border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+@keyframes avatarGradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.profile-name {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: white;
+  margin: 1rem 0 0.5rem 0;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.3);
+  background: linear-gradient(45deg, #fff, #f0f0f0, #fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.profile-title {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 2.5rem 0;
+  font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced Stats Grid */
+.stat-card-enhanced {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.stat-card-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #4ECDC4, #FFD700, #FF6B6B, #4ECDC4);
+  background-size: 200% 100%;
+  animation: statCardShimmer 3s ease infinite;
+}
+
+@keyframes statCardShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.stat-card-enhanced:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 0 40px rgba(78, 205, 196, 0.3);
+  transform: translateY(-8px) scale(1.02);
+}
+
+.stat-icon-container {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.stat-card-enhanced:hover .stat-icon-container {
+  transform: scale(1.1) rotate(5deg);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.stat-card-enhanced .stat-icon {
+  font-size: 2.2rem;
+  color: #FFD700;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  margin: 0 0 0.8rem 0;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Enhanced Badge Cards */
+.professional-badge-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border: 3px solid rgba(255, 255, 255, 0.25);
+  border-radius: 25px;
+  padding: 2.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  overflow: hidden;
+  min-height: 280px;
+}
+
+.professional-badge-card.earned {
+  background: rgba(255, 215, 0, 0.2);
+  border-color: rgba(255, 215, 0, 0.6);
+  box-shadow: 
+    0 15px 40px rgba(255, 215, 0, 0.3),
+    0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+.professional-badge-card.earned::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #FFD700, #FFA500, #FFD700);
+  background-size: 200% 200%;
+  animation: earnedGlow 4s ease infinite;
+  border-radius: 25px;
+  z-index: -1;
+}
+
+@keyframes earnedGlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.professional-badge-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.2),
+    0 0 40px rgba(78, 205, 196, 0.4);
+}
+
+.badge-icon-container .badge-icon {
+  font-size: 5rem;
+  display: block;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.professional-badge-card:hover .badge-icon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.badge-details h4 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  margin: 0 0 1rem 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.badge-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Badge Sections */
+.earned-badges-section,
+.available-badges-section {
+  margin-bottom: 3rem;
+}
+
+.subsection-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 2rem 0;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.badges-grid-professional {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Professional Badge Cards */
+.professional-badge-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.professional-badge-card.earned {
+  background: rgba(255, 215, 0, 0.15);
+  border-color: rgba(255, 215, 0, 0.4);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+.professional-badge-card.next-target {
+  background: rgba(78, 205, 196, 0.15);
+  border-color: rgba(78, 205, 196, 0.4);
+  animation: next-pulse 3s ease-in-out infinite;
+}
+
+@keyframes next-pulse {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 0 10px 30px rgba(78, 205, 196, 0.2);
+  }
+  50% { 
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(78, 205, 196, 0.4);
+  }
+}
+
+.professional-badge-card.locked {
+  opacity: 0.6;
+  filter: grayscale(80%);
+}
+
+.badge-glow {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.professional-badge-card:hover .badge-glow {
+  opacity: 1;
+}
+
+.badge-icon-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.badge-icon-container .badge-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.earned-sparkle {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 1.5rem;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% { 
+    transform: scale(1.2) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+.next-indicator {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #4ECDC4;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.badge-details h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 0.8rem 0;
+}
+
+.badge-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.completion-badge {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: #4CAF50;
+  font-size: 1.5rem;
+}
+
+/* No Badges Section */
+.no-badges-section {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.no-badges-content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.no-badges-icon {
+  font-size: 4rem;
+  color: #FFD700;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.no-badges-content h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 1rem 0;
+}
+
+.no-badges-content p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 2rem 0;
+}
+
+.next-badge-preview {
+  background: rgba(78, 205, 196, 0.2);
+  border: 2px solid rgba(78, 205, 196, 0.4);
+  border-radius: 15px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.next-badge-preview:hover {
+  background: rgba(78, 205, 196, 0.3);
+  border-color: rgba(78, 205, 196, 0.6);
+}
+
+.next-badge-preview p {
+  margin: 0.5rem 0;
+  color: white;
+}
+
+/* Call to Action Section */
+.profile-cta-section {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin: 3rem 0 0 0;
+}
+
+.cta-content h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 1rem 0;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 2rem 0;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #4ECDC4, #44A08D);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(78, 205, 196, 0.3);
+}
+
+.cta-button:hover {
+  box-shadow: 0 15px 40px rgba(78, 205, 196, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .badges-grid-professional {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-name {
+    font-size: 2.2rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+  
+  .profile-stats-grid-enhanced {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .badges-grid-professional {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .professional-badge-card {
+    padding: 1.5rem;
+  }
+  
+  .progress-bar {
+    width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .revolutionary-profile {
+    padding: 1rem 0;
+  }
+  
+  .profile-hero-section {
+    padding: 2rem 1rem;
+  }
+  
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+  
+  .profile-name {
+    font-size: 1.8rem;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+  }
+  
+  .professional-badge-card {
+    padding: 1rem;
+  }
+  
+  .badge-icon-container .badge-icon {
+    font-size: 3rem;
+  }
 }
 
 .rift-wave {

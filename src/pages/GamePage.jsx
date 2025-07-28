@@ -11,8 +11,9 @@ import AnswerInput from '../components/game/AnswerInput.jsx';
 import ProgressBar from '../components/game/ProgressBar.jsx';
 import ScoreBoard from '../components/game/ScoreBoard.jsx';
 import LoadingSpinner from '../components/common/LoadingSpinner.jsx';
-import { levels } from '../data/levels.js';
 import { GAME_STATES } from '../utils/constants.js';
+import { levels } from '../data/levels.js';
+import { getBadgesForLevelCompletion, addMultipleBadges } from '../utils/badgeManager.js';
 
 
 const GamePage = () => {
@@ -57,18 +58,36 @@ const GamePage = () => {
         currentUnlocked.add(nextLevel);
       }
 
+      // --- Badge Unlocking Logic ---
       const currentBadges = new Set(userData.badges || []);
-      currentBadges.add(level.badgeReward); // Add the badge for this level
-
       
+      // Add the level completion badge
+      if (level.badgeReward) {
+        currentBadges.add(level.badgeReward);
+      }
+      
+      // Check for accuracy-based badges
+      const sessionAccuracy = questions.length > 0 ? (correctAnswers / questions.length) * 100 : 0;
+      if (sessionAccuracy === 100) {
+        currentBadges.add('perfect-score');
+      }
+      
+      // Log for debugging
+      console.log('Adding badges:', {
+        levelBadge: level.badgeReward,
+        perfectScore: sessionAccuracy === 100,
+        allBadges: Array.from(currentBadges)
+      });
+
       const updatedData = {
         totalScore: userData.totalScore + score,
         questionsAnswered: userData.questionsAnswered + questions.length,
         correctAnswers: userData.correctAnswers + correctAnswers,
         lastPlayed: new Date(),
         unlockedLevels: Array.from(currentUnlocked), 
-        badges: Array.from(currentBadges),// Save the new array of unlocked levels
+        badges: Array.from(currentBadges), // Save the updated badges array
       };
+      
       updateUserData(updatedData);
       
       // Navigate to the final map page, passing the completed level info

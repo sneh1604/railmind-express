@@ -7,7 +7,7 @@ export const levels = [
     startCity: 'Mumbai',
     endCity: 'Pune',
     stations: ['Mumbai', 'Pune'],
-    badgeReward: 'Deccan Starter',
+    badgeReward: 'first-journey', // Level 1 = First Journey badge
     subjects: ['geography', 'arithmetic'],
     difficultyRange: [1, 2],
     questionCount: 5,
@@ -19,7 +19,7 @@ export const levels = [
     startCity: 'Pune',
     endCity: 'Bengaluru',
     stations: ['Pune', 'Hyderabad', 'Bengaluru'],
-    badgeReward: 'Southern Sprinter',
+    badgeReward: 'royal-rider', // Level 2 = Royal Rider (Rajasthan/royal cities theme)
     subjects: ['science', 'algebra'],
     difficultyRange: [2, 3],
     questionCount: 8,
@@ -31,7 +31,7 @@ export const levels = [
     startCity: 'Bengaluru',
     endCity: 'Kolkata',
     stations: ['Bengaluru', 'Chennai', 'Kolkata'],
-    badgeReward: 'Coastal Voyager',
+    badgeReward: 'eastern-express', // Level 3 = Eastern Express (to Kolkata)
     subjects: ['history', 'geometry'],
     difficultyRange: [3, 4],
     questionCount: 10,
@@ -43,7 +43,7 @@ export const levels = [
     startCity: 'Kolkata',
     endCity: 'Jaipur',
     stations: ['Kolkata', 'Delhi', 'Jaipur'],
-    badgeReward: 'Trunk Traveler',
+    badgeReward: 'coastal-cruiser', // Level 4 = Coastal Cruiser
     subjects: ['science', 'history', 'arithmetic'],
     difficultyRange: [3, 4],
     questionCount: 12,
@@ -55,7 +55,7 @@ export const levels = [
     startCity: 'Jaipur',
     endCity: 'Mumbai',
     stations: ['Jaipur', 'Ahmedabad', 'Mumbai'],
-    badgeReward: 'RailMind Master',
+    badgeReward: 'rail-master', // Updated to match badges.js
     subjects: ['geography', 'algebra', 'geometry'],
     difficultyRange: [4, 5],
     questionCount: 15,
